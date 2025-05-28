@@ -128,3 +128,17 @@ Cachorro.prototype.uivar = function () {
 console.log(Cachorro.prototype);
 
 husky.uivar();
+
+// 9 - Classes ES6 - USADO DE VERDADE
+class CachorroClasse {
+  constructor(nome, raca) {
+    this.nome = nome;
+    this.raca = raca;
+  }
+}
+
+const throffin = new CachorroClasse("Thorfinn", "Border Collie");
+
+console.log(throffin);
+
+console.log(Object.getPrototypeOf(throffin));
