@@ -107,3 +107,14 @@ const teo = criarCachorro("Teo", "Yorkshare");
 console.log(teo);
 
 console.log(Object.getPrototypeOf(teo));
+
+// 7 - função como classe
+
+function Cachorro(nome, raca) {
+  this.nome = nome;
+  this.raca = raca;
+}
+
+const husky = new Cachorro("Ozzy", "Husky");
+
+console.log(husky);
