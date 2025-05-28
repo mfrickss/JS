@@ -203,3 +203,177 @@ const fruits = ["banana", "maça", "laranja", "uva", "abacaxi"];
 fruits.forEach((fruits, index) => {
   console.log(`A fruta ${fruits} está na posição ${index}`);
 });
+
+const nums = [1, 2, 3, 4, 5];
+
+nums.forEach((numero, index) => {
+  console.log(`O número ${numero} está na posição ${index}`);
+});
+
+const posts = [
+  { title: "Primeiro post", category: "PHP" },
+  { title: "Segundo post", category: "JavaScript" },
+  { title: "Terceito post", category: "Python" },
+];
+
+posts.forEach((post) => {
+  console.log(`Exibindo o post ${post.title} da categoria ${post.category}`);
+});
+
+// 16 - includes
+
+const brands = ["Ford", "Chevrolet", "Fiat", "Volkswagen"];
+
+console.log(brands.includes("Ford")); // true
+console.log(brands.includes("Honda")); // false
+
+if (brands.includes("Ford")) {
+  console.log("A marca Ford está na lista");
+}
+
+// 17  - reverse
+
+const n = [1, 2, 3, 4, 5];
+
+n.reverse(); // Inverte a ordem dos elementos do array
+console.log(n); // [5, 4, 3, 2, 1]
+const reversedN = n.reverse(); // Inverte a ordem dos elementos do array
+console.log(reversedN); // [5, 4, 3, 2, 1]
+
+// 18 - Métodos de strings - trim
+const str = "   Olá, tudo bem? \n ";
+
+console.log(str); // "   Olá, tudo bem?"
+console.log(str.trim()); // Remove os espaços em branco do início e do fim da string
+console.log(str.length);
+console.log(str.trim().length);
+
+// 19 - padStart e padEnd
+// Adiciona caracteres à esquerda ou à direita de uma string até atingir um determinado comprimento
+
+const testePadStart = "1";
+
+const newNumber = testePadStart.padStart(4, "0"); // Adiciona 0 à esquerda até completar 5 caracteres
+
+console.log(testePadStart); // "1"
+console.log(newNumber); // "0001"
+
+const testePadEnd = newNumber.padEnd(10, "0"); // Adiciona 0 à direita até completar 5 caracteres
+
+console.log(testePadEnd); // "0001000000"
+
+// 20 - split
+
+const frase = "O rato roeu a roupa do rei de Roma";
+
+const arrayDaFrase = frase.split(" ");
+
+console.log(arrayDaFrase); // ["O", "rato", "roeu", "a", "roupa", "do", "rei", "de", "Roma"]
+
+if (arrayDaFrase.includes("rato")) {
+  console.log("A frase contém a palavra 'rato'");
+}
+
+// 21 - join
+
+const fraseDeNovo = arrayDaFrase.join(" "); // Junta os elementos do array em uma string, separando-os por espaço
+console.log(fraseDeNovo); // "O rato roeu a roupa do rei de Roma"
+
+const itenParaComprar = ["Mouse", "Teclado", "Monitor"];
+const fraseDeCompra = `Precisamos comprar: ${itenParaComprar.join(", ")}`;
+console.log(fraseDeCompra); // "Precisamos comprar: Mouse, Teclado, Monitor"
+
+// 22 - repeat
+
+const repetido = "Rick ".repeat(5); // Repete a string 5 vezes
+console.log(repetido); // "RickRickRickRickRick"
+
+// 23 - rest operator/parameter
+
+const somaInfinita = (...args) => {
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+
+  return total;
+};
+
+console.log(somaInfinita(1, 2, 3));
+
+console.log(somaInfinita(1, 20, 34, 128812, 12723, 12, 23, 54, 12));
+
+// 24 - for of
+
+const somaInfinita2 = (...args) => {
+  let total = 0;
+  for (num of args) {
+    total += num;
+  }
+  return total;
+};
+
+console.log(somaInfinita2(1, 2, 3));
+console.log(somaInfinita2(1, 20, 34, 128812, 12723, 12, 23, 54, 12));
+
+// 25 - Destructuring em objetos
+
+const userDetails = {
+  firstName: "Ricks",
+  lastName: "MF",
+  job: "Dev",
+};
+
+const { firstName, lastName, job } = userDetails;
+
+console.log(firstName, lastName, job);
+
+// renomeando variaveis
+
+const { firstName: primeiroNome } = userDetails;
+
+console.log(primeiroNome);
+
+// 26 - Destructuring em arrays
+
+const myList = ["Avião", "Submarino", "Carro"];
+
+const [veivuloA, veiculoB, veiculoC, d, e] = myList;
+
+console.log(veivuloA, veiculoB, veiculoC);
+console.log(d, e);
+
+// 27 - JSON
+
+const myJson =
+  '{"name": "Ricks", "age": 21, "skills": ["PHP", "JavaScript", "Python"]}';
+
+console.log(myJson);
+console.log(typeof myJson);
+
+// 28 - JSON para objeto e objeto para JSON
+
+const myObject = JSON.parse(myJson); // JSON PARA OBJETO
+
+console.log(myObject);
+
+console.log(myObject.name);
+console.log(myObject.age);
+console.log(myObject.skills);
+
+console.log(typeof myObject);
+
+/*json inválido
+
+const badJson = '{"name": Ricks, "age": 31}';
+
+const myBadObject = JSON.parse(badJson); */
+
+myObject.isOpenToWork = true;
+
+console.log(myObject);
+
+const myNewJson = JSON.stringify(myObject); // OBJETO PARA JSON
+
+console.log(myNewJson);
+console.log(typeof myNewJson);
