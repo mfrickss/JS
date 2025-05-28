@@ -118,3 +118,13 @@ function Cachorro(nome, raca) {
 const husky = new Cachorro("Ozzy", "Husky");
 
 console.log(husky);
+
+// 8 - métodos na função construtora
+
+Cachorro.prototype.uivar = function () {
+  console.log("Auuuuuuuuu!");
+};
+
+console.log(Cachorro.prototype);
+
+husky.uivar();
